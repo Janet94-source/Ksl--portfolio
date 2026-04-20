@@ -1,0 +1,104 @@
+import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { motion } from "framer-motion"; import { Input } from "@/components/ui/input"; import { Textarea } from "@/components/ui/textarea";
+
+export default function Portfolio() { return ( <div className="min-h-screen bg-gray-50 p-6"> {/* Hero Section */} <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12" > <h1 className="text-4xl font-bold mb-4">Janet Nyaboke</h1> <p className="text-lg text-gray-600"> Kenyan Sign Language Interpreter | Trainer | Inclusion Advocate </p> <div className="flex justify-center gap-4 mt-4"> <Button>Book a Session</Button> <Button variant="outline">Download CV</Button> </div> </motion.div>
+
+{/* About Section */}
+  <Card className="mb-8">
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+      <p>
+        I am a professional Kenyan Sign Language (KSL) interpreter,
+        specialist teacher, and inclusion advocate. I help bridge
+        communication between Deaf and hearing communities through
+        interpretation, training, and awareness programs.
+      </p>
+    </CardContent>
+  </Card>
+
+  {/* Video Section */}
+  <Card className="mb-8">
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold mb-4">Watch Me Work</h2>
+      <div className="aspect-video w-full bg-gray-200 flex items-center justify-center rounded-2xl">
+        <p className="text-gray-500">Embed your KSL video here</p>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Services Section */}
+  <div className="grid md:grid-cols-3 gap-6 mb-8">
+    {["Interpretation", "Training", "Advocacy"].map((service) => (
+      <Card key={service}>
+        <CardContent className="p-6">
+          <h3 className="text-xl font-semibold mb-2">{service}</h3>
+          <p>
+            Professional {service.toLowerCase()} services tailored for
+            schools, organizations, events, and individuals.
+          </p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+
+  {/* Portfolio Section */}
+  <Card className="mb-8">
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold mb-4">My Work</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Interpreted at national and community events</li>
+        <li>Trained teachers and students in KSL</li>
+        <li>Worked with NGOs on inclusion and accessibility</li>
+      </ul>
+    </CardContent>
+  </Card>
+
+  {/* Testimonials Section */}
+  <Card className="mb-8">
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold mb-4">Testimonials</h2>
+      <div className="space-y-4">
+        <p>“Highly professional and impactful training sessions.”</p>
+        <p>“Bridges communication gaps effectively.”</p>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Booking / Contact Form */}
+  <Card className="mb-8">
+    <CardContent className="p-6">
+      <h2 className="text-2xl font-semibold mb-4">Book a Session</h2>
+      <div className="grid gap-4">
+        <Input placeholder="Your Name" />
+        <Input placeholder="Email Address" />
+        <Textarea placeholder="Describe your needs (event, training, etc.)" />
+        <Button>Submit Request</Button>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Social Links */}
+  <Card className="mb-8">
+    <CardContent className="p-6 text-center">
+      <h2 className="text-2xl font-semibold mb-4">Connect With Me</h2>
+      <div className="flex justify-center gap-4">
+        <Button variant="outline">TikTok</Button>
+        <Button variant="outline">LinkedIn</Button>
+        <Button variant="outline">Facebook</Button>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Contact Section */}
+  <Card>
+    <CardContent className="p-6 text-center">
+      <h2 className="text-2xl font-semibold mb-2">Get in Touch</h2>
+      <p>Email: janet@example.com</p>
+      <p>Phone: +254 700 000 000</p>
+      <div className="mt-4">
+        <Button>Chat on WhatsApp</Button>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
+); }
